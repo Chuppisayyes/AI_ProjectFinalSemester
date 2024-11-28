@@ -1,5 +1,5 @@
 from mplwidget import MplWidget
-from PyQt6 import QtCore, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
 
 
 class Ui_MainWindow(object):
@@ -21,26 +21,14 @@ class Ui_MainWindow(object):
             "font-size: 40px; font-weight: bold; color: #333333;")  # Đặt kiểu chữ và màu sắc
         self.title_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)  # Canh giữa tiêu đề
 
-        # Nhãn cho đồ thị
-        self.graph_label = QtWidgets.QLabel(parent=self.central_widget)
-        self.graph_label.setGeometry(QtCore.QRect(20, 50, 300, 20))  # Điều chỉnh vị trí của nhãn
-        self.graph_label.setText("Đồ thị kết nối các thành phố:")  # Nội dung nhãn
-        self.graph_label.setStyleSheet("font-size: 14px; font-weight: bold; color: #333333;")
-
         # Vùng hiển thị đồ thị
         self.canvasFrame = MplWidget(parent=self.central_widget)
-        self.canvasFrame.setGeometry(QtCore.QRect(20, 80, 900, 500))  # Đặt vị trí và kích thước cho vùng đồ thị
+        self.canvasFrame.setGeometry(QtCore.QRect(20, 70, 900, 500))  # Đặt vị trí và kích thước cho vùng đồ thị
         self.canvasFrame.setObjectName("canvasFrame")
-
-        # Nhãn cho nhập số lượng thành phố
-        self.input_label = QtWidgets.QLabel(parent=self.central_widget)
-        self.input_label.setGeometry(QtCore.QRect(940, 70, 200, 30))  # Đặt vị trí gọn gàng bên trên SpinBox
-        self.input_label.setText("Số lượng thành phố:")  # Nội dung nhãn
-        self.input_label.setStyleSheet("font-size: 14px; font-weight: bold; color: #333333;")
 
         # SpinBox để nhập số lượng thành phố
         self.spinBox = QtWidgets.QSpinBox(parent=self.central_widget)
-        self.spinBox.setGeometry(QtCore.QRect(940, 110, 200, 30))  # Đặt vị trí ngay dưới nhãn
+        self.spinBox.setGeometry(QtCore.QRect(940, 100, 200, 30))  # Đặt vị trí và kích thước
         self.spinBox.setMinimum(2)  # Giá trị nhỏ nhất là 2
         self.spinBox.setObjectName("spinBox")
         self.spinBox.setStyleSheet(
@@ -48,7 +36,7 @@ class Ui_MainWindow(object):
 
         # Nút "Bắt đầu"
         self.startButton = QtWidgets.QPushButton(parent=self.central_widget)
-        self.startButton.setGeometry(QtCore.QRect(940, 160, 100, 40))  # Đặt vị trí và kích thước
+        self.startButton.setGeometry(QtCore.QRect(940, 150, 100, 40))  # Đặt vị trí và kích thước
         self.startButton.setObjectName("startButton")
         self.startButton.setStyleSheet("""
             QPushButton {
@@ -65,7 +53,7 @@ class Ui_MainWindow(object):
 
         # Nút "Dừng lại"
         self.stopButton = QtWidgets.QPushButton(parent=self.central_widget)
-        self.stopButton.setGeometry(QtCore.QRect(1050, 160, 100, 40))  # Đặt vị trí cùng hàng với nút "Bắt đầu"
+        self.stopButton.setGeometry(QtCore.QRect(1050, 150, 100, 40))  # Đặt vị trí cùng hàng với nút "Bắt đầu"
         self.stopButton.setObjectName("stopButton")
         self.stopButton.setStyleSheet("""
             QPushButton {
@@ -80,15 +68,9 @@ class Ui_MainWindow(object):
             }
         """)  # Kiểu dáng khi di chuột và khi nhấn
 
-        # Nhãn cho kết quả
-        self.result_label = QtWidgets.QLabel(parent=self.central_widget)
-        self.result_label.setGeometry(QtCore.QRect(20, 590, 100, 20))  # Điều chỉnh vị trí của nhãn
-        self.result_label.setText("Kết quả:")  # Nội dung nhãn
-        self.result_label.setStyleSheet("font-size: 14px; font-weight: bold; color: #333333;")
-
         # Hộp văn bản hiển thị kết quả
         self.resultTextBox = QtWidgets.QTextBrowser(parent=self.central_widget)
-        self.resultTextBox.setGeometry(QtCore.QRect(20, 620, 1160, 150))  # Đặt vị trí và kích thước
+        self.resultTextBox.setGeometry(QtCore.QRect(20, 580, 1160, 150))  # Đặt vị trí và kích thước
         self.resultTextBox.setObjectName("resultTextBox")
         self.resultTextBox.setStyleSheet(
             "background-color: white; border-radius: 5px; font-size: 14px;")  # Đặt màu nền và kiểu dáng

@@ -21,20 +21,10 @@ class WarningDialog(QDialog):
     def __init__(self, message):
         super().__init__()
         self.setWindowTitle("Warning")  # Tiêu đề của hộp thoại
+        self.setStyle("")
         self.setFixedWidth(300)  # Chiều rộng cố định
         self.setFixedHeight(100)  # Chiều cao cố định
         self.setModal(True)  # Đặt modal để ngăn các tác vụ khác cho đến khi hộp thoại được đóng
-        self.setStyleSheet("""
-            QDialog {
-                background-color: rgba(255, 0, 0, 0.8);  /* Màu nền đỏ bóng mờ */
-                border-radius: 10px;  /* Bo tròn góc */
-            }
-            QLabel {
-                color: white;  /* Màu chữ trắng */
-                font-size: 14px;  /* Kích thước chữ */
-                font-weight: bold;  /* Chữ đậm */
-            }
-        """)
         self.layout = QVBoxLayout()  # Layout theo chiều dọc
         if message is None:
             self.message_label = QLabel("Please enter the number of destinations")  # Nội dung mặc định

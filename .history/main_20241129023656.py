@@ -24,7 +24,7 @@ class WarningDialog(QDialog):
         self.setFixedWidth(300)  # Chiều rộng cố định
         self.setFixedHeight(100)  # Chiều cao cố định
         self.setModal(True)  # Đặt modal để ngăn các tác vụ khác cho đến khi hộp thoại được đóng
-        self.setStyleSheet("""
+          self.setStyleSheet("""
             QDialog {
                 background-color: rgba(255, 0, 0, 0.8);  /* Màu nền đỏ bóng mờ */
                 border-radius: 10px;  /* Bo tròn góc */
