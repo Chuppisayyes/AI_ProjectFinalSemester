@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <!-- Thiết lập kích thước và vị trí của cửa sổ chính -->
+  <property name="geometry">
+   <rect>
+    <x>0</x> <!-- Vị trí theo trục x -->
+    <y>0</y> <!-- Vị trí theo trục y -->
+    <width>800</width> <!-- Chiều rộng cửa sổ -->
+    <height>600</height> <!-- Chiều cao cửa sổ -->
+   </rect>
+  </property>
+  <!-- Tiêu đề của cửa sổ chính -->
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <!-- Nhãn nhập số thành phố -->
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x> <!-- Vị trí theo trục x -->
+      <y>400</y> <!-- Vị trí theo trục y -->
+      <width>201</width> <!-- Chiều rộng của nhãn -->
+      <height>16</height> <!-- Chiều cao của nhãn -->
+     </rect>
+    </property>
+    <property name="text">
+     <string>Nhập số thành phố:</string> <!-- Nội dung văn bản -->
+    </property>
+   </widget>
+   <!-- Nhãn hiển thị kết quả -->
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>260</x> <!-- Vị trí theo trục x -->
+      <y>400</y> <!-- Vị trí theo trục y -->
+      <width>49</width> <!-- Chiều rộng của nhãn -->
+      <height>16</height> <!-- Chiều cao của nhãn -->
+     </rect>
+    </property>
+    <property name="text">
+     <string>Kết quả:</string> <!-- Nội dung văn bản -->
+    </property>
+   </widget>
+   <!-- Hộp văn bản để hiển thị kết quả -->
+   <widget class="QTextBrowser" name="tbResult">
+    <property name="geometry">
+     <rect>
+      <x>260</x> <!-- Vị trí theo trục x -->
+      <y>421</y> <!-- Vị trí theo trục y -->
+      <width>531</width> <!-- Chiều rộng của hộp văn bản -->
+      <height>131</height> <!-- Chiều cao của hộp văn bản -->
+     </rect>
+    </property>
+   </widget>
+   <!-- Nút "Bắt đầu" -->
+   <widget class="QPushButton" name="btStart">
+    <property name="geometry">
+     <rect>
+      <x>10</x> <!-- Vị trí theo trục x -->
+      <y>480</y> <!-- Vị trí theo trục y -->
+      <width>75</width> <!-- Chiều rộng của nút -->
+      <height>51</height> <!-- Chiều cao của nút -->
+     </rect>
+    </property>
+    <property name="text">
+     <string>Bắt đầu</string> <!-- Nội dung văn bản trên nút -->
+    </property>
+   </widget>
+   <!-- Nút "Dừng lại" -->
+   <widget class="QPushButton" name="btStop">
+    <property name="geometry">
+     <rect>
+      <x>130</x> <!-- Vị trí theo trục x -->
+      <y>480</y> <!-- Vị trí theo trục y -->
+      <width>75</width> <!-- Chiều rộng của nút -->
+      <height>51</height> <!-- Chiều cao của nút -->
+     </rect>
+    </property>
+    <property name="text">
+     <string>Dừng lại</string> <!-- Nội dung văn bản trên nút -->
+    </property>
+   </widget>
+   <!-- Vùng hiển thị đồ thị (dùng MplWidget) -->
+   <widget class="MplWidget" name="canvaFrame" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x> <!-- Vị trí theo trục x -->
+      <y>10</y> <!-- Vị trí theo trục y -->
+      <width>781</width> <!-- Chiều rộng vùng hiển thị -->
+      <height>381</height> <!-- Chiều cao vùng hiển thị -->
+     </rect>
+    </property>
+   </widget>
+   <!-- SpinBox để nhập số thành phố -->
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x> <!-- Vị trí theo trục x -->
+      <y>430</y> <!-- Vị trí theo trục y -->
+      <width>191</width> <!-- Chiều rộng của SpinBox -->
+      <height>22</height> <!-- Chiều cao của SpinBox -->
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>2</number> <!-- Giá trị tối thiểu là 2 -->
+    </property>
+   </widget>
+  </widget>
+  <!-- MenuBar của cửa sổ chính -->
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x> <!-- Vị trí theo trục x -->
+     <y>0</y> <!-- Vị trí theo trục y -->
+     <width>800</width> <!-- Chiều rộng MenuBar -->
+     <height>22</height> <!-- Chiều cao MenuBar -->
+    </rect>
+   </property>
+  </widget>
+  <!-- StatusBar của cửa sổ chính -->
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <!-- Định nghĩa custom widget (MplWidget) -->
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class> <!-- Tên lớp custom -->
+   <extends>QWidget</extends> <!-- Kế thừa từ QWidget -->
+   <header>mplwidget.h</header> <!-- Header file của custom widget -->
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
